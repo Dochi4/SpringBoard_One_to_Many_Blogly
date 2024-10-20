@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Users List{% endblock %}
+
+{% block header %}
+<h1>Post Details</h1>
+<form action="/" id="home_button">
+    <input type="submit" value="Home" />
+</form>
+{% endblock %}
+
+{% block content %}
+
+<h2>{{post.title}}</h2>
+<p>{{post.content}}</p>
+<p> By {{user.first_name}} {{user.last_name}}</p>
+
+
+<form action="/users/{{ user.id }}/posts/{{ post.id }}/edit" id="edit_post" method="GET">
+    <input type="submit" value="Edit" />
+</form>
+
+<form action="/users/{{ user.id }}/posts/{{ post.id }}/delete" id="delete_post" method="POST">
+    <input type="submit" value="Delete" />
+</form>
+
+<form action="/users/{{ user.id }}">
+    <input type="submit" value="Cancel" />
+</form>
+
+{% endblock %}

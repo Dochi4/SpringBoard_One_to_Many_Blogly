@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Users List{% endblock %}
+
+{% block header %}
+<h1>ALL Users List</h1>
+{% endblock %}
+
+{% block content %}
+<h2>Create a user</h2>
+<form action="/users/new" method="POST">
+    <p>First name</p>
+    <input type="text" name="first_name" placeholder="Enter a first_name">
+    <br>
+    <p>Last name</p>
+    <input type="text" name="last_name" placeholder="Enter a last_name">
+    <br>
+    <p>Image Url</p>
+    <input type="text" name="image_url" placeholder="Provide an image of this user">
+    <br>
+    <button type="submit">Add</button>
+</form>
+<form action="/users">
+    <input type="submit" value="Cancel" />
+</form>
+{% endblock %}
